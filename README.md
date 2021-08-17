@@ -41,7 +41,7 @@ Thanks to the `correlation` package I'm also able to dive into the correlation b
 
 # Conclusion:
 
-All in all, I thought it was a really cool experience to be able to see the features change throughout time. I look forward to see how my the features change in the future :grin:
+All in all, I thought it was a really cool experience to be able to see the features change throughout time. I look forward to see how the features change in the future :grin:
 
 # Reference
 
