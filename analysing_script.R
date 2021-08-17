@@ -134,3 +134,11 @@ results |>
     title = "Gaussian Graphical Model of Audio Features",
     caption = "Data: My account via Spotify's API"
   )
+
+results |> 
+  summary(redundant = TRUE) |> 
+  plot() +
+  labs(
+    title = "Correlation Matrix of Audio Features",
+    caption = "Data: My account via Spotify's API"
+  )
