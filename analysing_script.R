@@ -38,7 +38,7 @@ wider_all_playlists <-
 
 # Looking at the difference in valence 2018 vs 2020
 wider_all_playlists |>
-ggplot() +
+  ggplot() +
   aes(x = valence, fill = playlist) +
   geom_density(alpha = 0.5, position = "identity")
 
@@ -53,9 +53,6 @@ wide_2016 <- wider_all_playlists |> filter(playlist == "2016")
 # T Test
 t.test(x = wide_2020$valence, y = wide_2018$valence)
 
-
-
-
 means <-
   wider_all_playlists |>
   group_by(playlist) |>
@@ -68,14 +65,14 @@ means <-
 
 
 audio_feature_graph <- function(data, audio_feature) {
-
+  
   # For passing in columns into function
   feature <- sym(audio_feature)
-
+  
   plot <- data |>
-  ggplot() +
+    ggplot() +
     aes(x = !!feature, y = playlist, color = playlist, fill = playlist)
-
+  
   plot <-
     plot +
     stat_slab(
@@ -83,7 +80,7 @@ audio_feature_graph <- function(data, audio_feature) {
       alpha = .2
     ) +
     stat_halfeye(fill = "transparent")
-
+  
   plot <-
     plot +
     theme_minimal() +
@@ -92,7 +89,7 @@ audio_feature_graph <- function(data, audio_feature) {
       legend.position = "none",
       plot.title = element_text(hjust = 0.5)
     )
-
+  
   return(plot)
 }
 
@@ -107,7 +104,7 @@ all_audio_features <- c(
 )
 
 all_plots <- all_audio_features |>
-map(~ audio_feature_graph(wider_all_playlists, .x))
+  map(~ audio_feature_graph(wider_all_playlists, .x))
 
 all_plots <-
   wrap_plots(all_plots) +
@@ -120,19 +117,20 @@ all_plots <-
 all_plots
 
 
-
+# Correlation analysis ----------------------------------------------------
 
 library(correlation)
 library(ggraph)
 
-results <- correlation(wider_all_playlists,
+results <- correlation(
+  wider_all_playlists,
   select = all_audio_features
 )
 
 results |>
-plot(col.lab = "black")
-
-
-mtcars %>%
-  correlation(partial = TRUE) %>%
-  plot()
+  plot() +
+  geom_node_text(label = all_audio_features, color = "black") +
+  labs(
+    title = "Gaussian Graphical Model of Audio Features",
+    caption = "Data: My account via Spotify's API"
+  )
