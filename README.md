@@ -18,3 +18,17 @@ From [The Spotify API Documentation](https://developer.spotify.com/documentation
  - `tempo` - The overall estimated tempo of a track in beats per minute (BPM)
  - `valence` - A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track.
 
+# What I found:
+
+I was able to get a really cool look at the different scores over the years. It's neat to see how my taste has changed.
+
+## Summary of each feature by year
+Below are the distributions of each feature by year of playlist:
+
+![Picture of Yearly Playlist Summary by Audio Feature](yearly_playlist_summary.png)
+
+## Correlation of Variables
+
+
+Thanks to the `correlation` package I'm also able to dive into the correlation between features:
+
