@@ -142,3 +142,7 @@ corr_matrix <- results |>
     title = "Correlation Matrix of Audio Features",
     caption = "Data: My account via Spotify's API"
   )
+
+ggsave("yearly_playlist_summary.png", all_plots)
+ggsave("GGM_audio_features.png", ggm_graph)
+ggsave("correlation_matrix.png", corr_matrix, width = 12, height = 7)
