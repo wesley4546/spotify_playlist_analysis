@@ -29,6 +29,12 @@ Below are the distributions of each feature by year of playlist:
 
 ## Correlation of Variables
 
-
 Thanks to the `correlation` package I'm also able to dive into the correlation between features:
+### Correlation Matrix
+
+![Picture of Correlation Matrix by Audio Feature](correlation_matrix.png)
+
+### Gaussian Graphical Model of Audio Features
+
+![Picture of the Gaussian Graphical Model of Audio Features](GGM_audio_features.png)
 
