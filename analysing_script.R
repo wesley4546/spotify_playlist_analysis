@@ -65,14 +65,14 @@ means <-
 
 
 audio_feature_graph <- function(data, audio_feature) {
-  
+
   # For passing in columns into function
   feature <- sym(audio_feature)
-  
+
   plot <- data |>
     ggplot() +
     aes(x = !!feature, y = playlist, color = playlist, fill = playlist)
-  
+
   plot <-
     plot +
     stat_slab(
@@ -80,7 +80,7 @@ audio_feature_graph <- function(data, audio_feature) {
       alpha = .2
     ) +
     stat_halfeye(fill = "transparent")
-  
+
   plot <-
     plot +
     theme_minimal() +
@@ -89,7 +89,7 @@ audio_feature_graph <- function(data, audio_feature) {
       legend.position = "none",
       plot.title = element_text(hjust = 0.5)
     )
-  
+
   return(plot)
 }
 
@@ -127,7 +127,7 @@ results <- correlation(
   select = all_audio_features
 )
 
-results |>
+ggm_graph <- results |>
   plot() +
   geom_node_text(label = all_audio_features, color = "black") +
   labs(
@@ -135,8 +135,8 @@ results |>
     caption = "Data: My account via Spotify's API"
   )
 
-results |> 
-  summary(redundant = TRUE) |> 
+corr_matrix <- results |>
+  summary(redundant = TRUE) |>
   plot() +
   labs(
     title = "Correlation Matrix of Audio Features",
