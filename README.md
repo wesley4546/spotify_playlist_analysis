@@ -1,7 +1,7 @@
 # Spotify Top 100 Yearly Playlist Analysis
 
 # Wesley, Why?
-Every year Spotify comes out with our top 100 songs. Since I've been using Spotify from some time now, I have a couple playlists built up. I always wondered how my music taste has changed throughout the year. Wielding Spotify's API and being able to accesss different [Audio Features](https://benanne.github.io/2014/08/05/spotify-cnns.html) I thought it might be worth checking out. 
+Every year Spotify comes out with our top 100 songs. Since I've been using Spotify from some time now, I have a couple playlists built up. I always wondered how my music taste has changed throughout the years. Wielding Spotify's API and being able to accesss different [Audio Features](https://benanne.github.io/2014/08/05/spotify-cnns.html) I thought it might be worth checking out. 
 
 # Spotify's Audio Features:
 
